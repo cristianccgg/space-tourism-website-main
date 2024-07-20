@@ -11,7 +11,7 @@ export const Destination = () => {
   const [selectedDestination, setSelectedDestination] = useState(null);
 
   const fetchData = async () => {
-    const response = await fetch("/public/data.json");
+    const response = await fetch("/data.json");
     const jsonData = await response.json();
     setDestinations(jsonData.destinations);
     setSelectedDestination(jsonData.destinations[1]); // Selecciona el primer destino por defecto
