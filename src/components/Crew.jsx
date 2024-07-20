@@ -45,23 +45,30 @@ export const Crew = () => {
   const { name, role, bio, images } = data.crew[CurrentIndex];
 
   return (
-    <div className="bg-crew-mobile bg-no-repeat bg-cover h-screen text-white text-center flex flex-col py-5">
-      <img className="h-60 w-60 self-center" src={images.png} alt={name} />
-      <div className="flex flex-col items-center justify-center bg-black bg-opacity-50 p-5">
-        <div className="flex gap-5">
-          <button onClick={handleNext} className="text-2xl">
-            <i className="bx bxs-caret-left-circle"></i>
-          </button>
-          <button onClick={handlePrevious} className="text-2xl">
-            <i className="bx bxs-caret-right-circle"></i>
-          </button>
-        </div>
-        <h2 className="font-extralight">{role}</h2>
-        <h1 className="text-2xl">{name}</h1>
+    <div className="bg-crew-mobile bg-no-repeat bg-cover md:bg-crew-desktop h-screen text-white text-center items-center md:items-end flex flex-col py-5 md:flex-row sm:px-10 md:py-0">
+      <div className="md:order-2  md:w-[100vw] md:h-[80vh]">
+        <img
+          className="h-60 w-60 md:h-full md:w-full self-center object-contain md:mx-auto"
+          src={images.png}
+          alt={name}
+        />
       </div>
-
-      <div className="py-5 px-8">
-        <p className="font-light">{bio}</p>
+      <div className=" md:h-[80vh] content-center">
+        <div className="flex flex-col items-center justify-center bg-black bg-opacity-50 p-5 md:bg-transparent">
+          <div className="flex gap-5">
+            <button onClick={handleNext} className="text-2xl">
+              <i className="bx bxs-caret-left-circle"></i>
+            </button>
+            <button onClick={handlePrevious} className="text-2xl">
+              <i className="bx bxs-caret-right-circle"></i>
+            </button>
+          </div>
+          <h2 className="font-extralight">{role}</h2>
+          <h1 className="text-2xl">{name}</h1>
+        </div>
+        <div className="py-5 px-8">
+          <p className="font-light">{bio}</p>
+        </div>
       </div>
     </div>
   );

@@ -12,10 +12,10 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center bg-black text-white px-10 py-5">
+    <nav className="flex justify-between items-center bg-black md:bg-opacity-50 text-white px-10 py-5 md:absolute md:top-10 md:w-full">
       <img src={logo} alt="logo" />
-      <div className="hidden sm:flex">
-        <ul className="flex gap-8 pe-32">
+      <div className="hidden md:flex">
+        <ul className="flex gap-8 pe-28">
           <li>
             <Link to="/">00 HOME</Link>
           </li>
@@ -30,7 +30,7 @@ export const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="sm:hidden">
+      <div className="md:hidden">
         <button onClick={toggleMenu}>
           <img src={openMenu ? iconClose : hamBtn} alt="menu icon" />
         </button>

@@ -28,38 +28,44 @@ export const Destination = () => {
   const { description, distance, images, name, travel } = selectedDestination;
 
   return (
-    <div className="bg-destination-mobile bg-no-repeat bg-cover h-screen text-white text-center flex flex-col items-center gap-8 pt-5">
-      <h1 className="font-extralight">Pick your destination</h1>
-      <div>
-        <img className="w-52" src={images.png} alt={name} />
-      </div>
-
-      <div className="flex gap-5 font-extralight">
-        {destinations.map((destination) => (
-          <button
-            key={destination.name}
-            className="border rounded-lg p-1"
-            onClick={() => setSelectedDestination(destination)}
-          >
-            {destination.name}
-          </button>
-        ))}
-      </div>
-
-      <h1 className="text-4xl font-bold">{name}</h1>
-
-      <div className="px-5">
-        <p className="font-extralight">{description}</p>
-      </div>
-
-      <div className="flex justify-between w-full px-10">
+    <div className="bg-destination-mobile bg-no-repeat bg-cover md:bg-destination-desktop h-screen text-white text-center md: md:text-start flex flex-col items-center gap-8 pt-5 md:flex-row md:px-32 md:gap-44">
+      <div className="flex flex-col gap-5 md:gap-10">
+        <h1 className="font-extralight">01 PICK YOUR DESTINATION</h1>
         <div>
-          <p>Avg. distance</p>
-          <h1 className="text-2xl font-semibold">{distance}</h1>
+          <img
+            className="w-52 md:w-[70vw] md:max-w-[50vh]"
+            src={images.png}
+            alt={name}
+          />
         </div>
-        <div>
-          <p>Est. travel time</p>
-          <h1 className="text-2xl font-semibold">{travel}</h1>
+      </div>
+
+      <div className="flex flex-col items-center md:items-start gap-5 md:gap-8">
+        <div className="flex gap-5 font-extralight">
+          {destinations.map((destination) => (
+            <button
+              key={destination.name}
+              className="border rounded-lg p-1"
+              onClick={() => setSelectedDestination(destination)}
+            >
+              {destination.name}
+            </button>
+          ))}
+        </div>
+        <h1 className="text-4xl font-bold md:text-8xl">{name}</h1>
+        <div className="px-5 md:px-0">
+          <p className="font-extralight">{description}</p>
+        </div>
+        <hr className="border border-white w-96 mx-auto" />
+        <div className="flex justify-between md:px-0 w-full px-10">
+          <div>
+            <p>Avg. distance</p>
+            <h1 className="text-2xl font-semibold">{distance}</h1>
+          </div>
+          <div>
+            <p>Est. travel time</p>
+            <h1 className="text-2xl font-semibold">{travel}</h1>
+          </div>
         </div>
       </div>
     </div>
