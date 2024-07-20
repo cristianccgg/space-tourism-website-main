@@ -4,7 +4,7 @@ export const Home = () => {
   return (
     <div className="bg-home-mobile min-h-screen bg-no-repeat text-white flex flex-col items-center w-full p-8 font-light gap-8">
       <h2 className="flex flex-col items-center">
-        Space So, you want to travel to <span className="text-8xl">SPACE</span>
+        So, you want to travel to <span className="text-8xl">SPACE</span>
       </h2>{" "}
       <h1 className="text-center">
         Let’s face it; if you want to go to space, you might as well genuinely

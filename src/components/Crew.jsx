@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from "react";
-import crew1 from "/assets/crew/image-anousheh-ansari.png";
+import "boxicons/css/boxicons.min.css";
+
+const Skeleton = () => (
+  <div className="flex flex-col items-center justify-center h-screen bg-gray-800 text-white py-5">
+    <div className="w-full h-60 bg-gray-700  animate-ping"></div>
+  </div>
+);
 
 export const Crew = () => {
   const [data, setData] = useState(null);
+  const [CurrentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,20 +28,41 @@ export const Crew = () => {
     fetchData();
   }, []);
 
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % data.crew.length);
+  };
+
+  const handlePrevious = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? data.crew.length - 1 : prevIndex - 1
+    );
+  };
+
   if (!data) {
-    return <div>Loading...</div>;
+    return <Skeleton />;
   }
 
+  const { name, role, bio, images } = data.crew[CurrentIndex];
+
   return (
-    <div className="bg-crew-mobile h-screen text-white text-center flex flex-col">
-      <img
-        className="h-60 w-60 self-center"
-        src={data.crew[0].images.png}
-        alt={data.crew[0].name}
-      />
-      <h2>{data.crew[0].role}</h2>
-      <h1>{data.crew[0].name}</h1>
-      <p>{data.crew[0].bio}</p>
+    <div className="bg-crew-mobile bg-no-repeat h-screen text-white text-center flex flex-col py-5">
+      <img className="h-60 w-60 self-center" src={images.png} alt={name} />
+      <div className="flex flex-col items-center justify-center bg-black bg-opacity-50 p-5">
+        <div className="flex gap-5">
+          <button onClick={handleNext} className="text-2xl">
+            <i className="bx bxs-caret-left-circle"></i>
+          </button>
+          <button onClick={handlePrevious} className="text-2xl">
+            <i className="bx bxs-caret-right-circle"></i>
+          </button>
+        </div>
+        <h2 className="font-extralight">{role}</h2>
+        <h1 className="text-2xl">{name}</h1>
+      </div>
+
+      <div className="py-5 px-8">
+        <p className="font-light">{bio}</p>
+      </div>
     </div>
   );
 };
