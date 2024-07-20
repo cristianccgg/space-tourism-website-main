@@ -11,7 +11,7 @@ export const Technology = () => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const fetchData = async () => {
-    const response = await fetch("/data.json");
+    const response = await fetch("/public/data.json");
     const jsonData = await response.json();
     setItems(jsonData.technology);
     setSelectedItem(jsonData.technology[0]);
