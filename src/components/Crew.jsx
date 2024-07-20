@@ -45,7 +45,7 @@ export const Crew = () => {
   const { name, role, bio, images } = data.crew[CurrentIndex];
 
   return (
-    <div className="bg-crew-mobile bg-no-repeat bg-contain h-screen text-white text-center flex flex-col py-5">
+    <div className="bg-crew-mobile bg-no-repeat bg-cover h-screen text-white text-center flex flex-col py-5">
       <img className="h-60 w-60 self-center" src={images.png} alt={name} />
       <div className="flex flex-col items-center justify-center bg-black bg-opacity-50 p-5">
         <div className="flex gap-5">

@@ -10,7 +10,7 @@ import { Technology } from "./components/Technology.jsx";
 function App() {
   return (
     <Router>
-      <div className="min-h-screen">
+      <div>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

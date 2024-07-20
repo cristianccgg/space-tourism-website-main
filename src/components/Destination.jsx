@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
 
+const Skeleton = () => (
+  <div className="flex flex-col items-center justify-center h-screen bg-gray-800 text-white py-5">
+    <div className="w-full h-60 bg-gray-700  animate-ping"></div>
+  </div>
+);
+
 export const Destination = () => {
   const [destinations, setDestinations] = useState([]);
   const [selectedDestination, setSelectedDestination] = useState(null);
@@ -16,13 +22,13 @@ export const Destination = () => {
   }, []);
 
   if (!selectedDestination) {
-    return <div>Loading...</div>;
+    return <Skeleton />;
   }
 
   const { description, distance, images, name, travel } = selectedDestination;
 
   return (
-    <div className="bg-destination-mobile bg-no-repeat bg-contain h-screen text-white text-center flex flex-col items-center gap-8 pt-5">
+    <div className="bg-destination-mobile bg-no-repeat bg-cover h-screen text-white text-center flex flex-col items-center gap-8 pt-5">
       <h1 className="font-extralight">Pick your destination</h1>
       <div>
         <img className="w-52" src={images.png} alt={name} />
