@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "/assets/shared/logo.svg";
-import hamBtn from "/assets/shared/icon-hamburger.svg";
-import iconClose from "/assets/shared/icon-close.svg";
+import logo from "/images/logo.svg";
+import hamBtn from "/images/icon-hamburger.svg";
+import iconClose from "/images/icon-close.svg";
 
 export const Navbar = () => {
   const [openMenu, setopenMenu] = useState(false);
