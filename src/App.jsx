@@ -10,7 +10,7 @@ import { Technology } from "./components/Technology.jsx";
 function App() {
   return (
     <Router>
-      <div>
+      <div className="max-w-7xl mx-auto">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

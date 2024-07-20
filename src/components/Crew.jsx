@@ -45,7 +45,7 @@ export const Crew = () => {
   const { name, role, bio, images } = data.crew[CurrentIndex];
 
   return (
-    <div className="bg-crew-mobile bg-no-repeat bg-cover md:bg-crew-desktop h-screen text-white text-center items-center md:items-end flex flex-col py-5 md:flex-row sm:px-10 md:py-0">
+    <div className="bg-crew-mobile bg-no-repeat bg-cover md:bg-crew-desktop h-screen text-white text-center items-center md:items-end flex flex-col py-5 md:flex-row sm:px-10 md:px-20 md:py-0">
       <div className="md:order-2  md:w-[100vw] md:h-[80vh]">
         <img
           className="h-60 w-60 md:h-full md:w-full self-center object-contain md:mx-auto"
@@ -53,9 +53,9 @@ export const Crew = () => {
           alt={name}
         />
       </div>
-      <div className=" md:h-[80vh] content-center">
-        <div className="flex flex-col items-center justify-center bg-black bg-opacity-50 p-5 md:bg-transparent">
-          <div className="flex gap-5">
+      <div className=" md:h-[80vh] content-center md:text-start md:p-10">
+        <div className="flex flex-col items-center justify-center md:items-start bg-black bg-opacity-50 p-5 md:p-0 md:bg-transparent md:gap-3">
+          <div className="flex gap-5 md:order-2">
             <button onClick={handleNext} className="text-2xl">
               <i className="bx bxs-caret-left-circle"></i>
             </button>
@@ -63,11 +63,13 @@ export const Crew = () => {
               <i className="bx bxs-caret-right-circle"></i>
             </button>
           </div>
-          <h2 className="font-extralight">{role}</h2>
-          <h1 className="text-2xl">{name}</h1>
+          <div className="flex flex-col items-center md:items-start gap-5">
+            <h2 className="font-extralight md:text-4xl">{role}</h2>
+            <h1 className="text-2xl md:text-6xl">{name}</h1>
+          </div>
         </div>
-        <div className="py-5 px-8">
-          <p className="font-light">{bio}</p>
+        <div className="py-5 px-8 md:py-10 md:px-0">
+          <p className="font-extralight md:text-2xl">{bio}</p>
         </div>
       </div>
     </div>

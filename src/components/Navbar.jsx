@@ -12,56 +12,60 @@ export const Navbar = () => {
   };
 
   return (
-    <nav className="flex justify-between items-center bg-black md:bg-opacity-50 text-white px-10 py-5 md:absolute md:top-10 md:w-full">
-      <img src={logo} alt="logo" />
-      <div className="hidden md:flex">
-        <ul className="flex gap-8 pe-28">
-          <li>
-            <Link to="/">00 HOME</Link>
-          </li>
-          <li>
-            <Link to="/destination">01 DESTINATION</Link>
-          </li>
-          <li>
-            <Link to="/crew">02 CREW</Link>
-          </li>
-          <li>
-            <Link to="/technology">03 TECHNOLOGY</Link>
-          </li>
-        </ul>
-      </div>
-      <div className="md:hidden">
-        <button onClick={toggleMenu}>
-          <img src={openMenu ? iconClose : hamBtn} alt="menu icon" />
-        </button>
-
-        <div
-          className={`fixed top-20 right-0 h-full w-2/3 bg-slate-800 opacity-70 p-10 transform ${
-            openMenu ? "translate-x-0" : "translate-x-full"
-          } transition-transform`}
-        >
-          <ul className="flex flex-col items-start gap-8">
+    <nav className=" bg-black text-white w-full">
+      <div className="max-w-7xl md:bg-black md:bg-opacity-50 mx-auto flex justify-between items-center px-10 py-5 md:absolute md:top-10 md:w-full">
+        <Link to={"/"}>
+          <img src={logo} alt="logo" />
+        </Link>
+        <div className="hidden md:flex">
+          <ul className="flex gap-8 pe-28">
             <li>
-              <Link to="/" onClick={toggleMenu}>
-                00 HOME
-              </Link>
+              <Link to="/">00 HOME</Link>
             </li>
             <li>
-              <Link to="/destination" onClick={toggleMenu}>
-                01 DESTINATION
-              </Link>
+              <Link to="/destination">01 DESTINATION</Link>
             </li>
             <li>
-              <Link to="/crew" onClick={toggleMenu}>
-                02 CREW
-              </Link>
+              <Link to="/crew">02 CREW</Link>
             </li>
             <li>
-              <Link to="/technology" onClick={toggleMenu}>
-                03 TECHNOLOGY
-              </Link>
+              <Link to="/technology">03 TECHNOLOGY</Link>
             </li>
           </ul>
+        </div>
+        <div className="md:hidden">
+          <button onClick={toggleMenu}>
+            <img src={openMenu ? iconClose : hamBtn} alt="menu icon" />
+          </button>
+
+          <div
+            className={`fixed top-20 right-0 h-full w-2/3 bg-slate-800 opacity-70 p-10 transform ${
+              openMenu ? "translate-x-0" : "translate-x-full"
+            } transition-transform`}
+          >
+            <ul className="flex flex-col items-start gap-8">
+              <li>
+                <Link to="/" onClick={toggleMenu}>
+                  00 HOME
+                </Link>
+              </li>
+              <li>
+                <Link to="/destination" onClick={toggleMenu}>
+                  01 DESTINATION
+                </Link>
+              </li>
+              <li>
+                <Link to="/crew" onClick={toggleMenu}>
+                  02 CREW
+                </Link>
+              </li>
+              <li>
+                <Link to="/technology" onClick={toggleMenu}>
+                  03 TECHNOLOGY
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
