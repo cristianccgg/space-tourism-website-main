@@ -13,7 +13,7 @@ export const Navbar = () => {
 
   return (
     <nav className=" bg-black text-white w-full">
-      <div className="max-w-7xl md:bg-black md:bg-opacity-50 mx-auto flex justify-between items-center px-10 py-5 md:absolute md:top-10 md:w-full">
+      <div className="z-50 md:bg-black md:bg-opacity-50 mx-auto flex justify-between items-center px-10 py-5 md:absolute md:top-10 md:w-full">
         <Link to={"/"}>
           <img src={logo} alt="logo" />
         </Link>

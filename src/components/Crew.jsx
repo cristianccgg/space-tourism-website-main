@@ -68,7 +68,7 @@ export const Crew = () => {
             <h1 className="text-2xl md:text-6xl">{name}</h1>
           </div>
         </div>
-        <div className="py-5 px-8 md:py-10 md:px-0">
+        <div className="py-5 px-8 md:pt-3 md:px-0">
           <p className="font-extralight md:text-2xl">{bio}</p>
         </div>
       </div>
