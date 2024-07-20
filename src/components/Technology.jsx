@@ -59,7 +59,9 @@ export const Technology = () => {
           <h1 className="md:text-2xl">THE TERMINOLOGY...</h1>
           <h1 className="text-3xl lg:text-6xl">{name}</h1>
           <div className="p-5 md:p-0">
-            <p className="font-extralight pe-16 md:text-2xl">{description}</p>
+            <p className="font-extralight md:pe-16 md:text-2xl">
+              {description}
+            </p>
           </div>
         </div>
       </div>
