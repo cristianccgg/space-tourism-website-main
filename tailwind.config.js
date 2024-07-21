@@ -18,6 +18,9 @@ export default {
         "tech-desktop":
           "url('/images/technology/background-technology-desktop.jpg')",
       },
+      fontFamily: {
+        roboto: ["Cormorant Garamond"],
+      },
     },
   },
   plugins: [],
