@@ -28,7 +28,7 @@ export const Technology = () => {
   const { description, images, name } = selectedItem;
 
   return (
-    <div className="bg-tech-mobile md:bg-tech-desktop bg-no-repeat bg-cover h-screen text-white text-center flex flex-col md:flex-row gap-5 py-5 items-center md:px-20 md:relative">
+    <div className="bg-tech-mobile md:bg-tech-desktop bg-no-repeat bg-cover h-[90vh] sm:h-[100vh] justify-evenly text-white text-center flex flex-col md:flex-row gap-5 py-5 items-center md:px-20 md:relative">
       <h1 className="md:absolute md:top-44 md:left-16 md:text-2xl md:font-thin z-10">
         03 Space launch 101
       </h1>
@@ -61,7 +61,9 @@ export const Technology = () => {
           <h1 className="md:text-2xl">THE TERMINOLOGY...</h1>
           <h1 className="text-3xl lg:text-6xl">{name}</h1>
           <div className="p-5 md:p-0">
-            <p className="font-thin md:pe-16 md:text-xl">{description}</p>
+            <p className="font-thin md:pe-16 md:text-xl md:leading-8">
+              {description}
+            </p>
           </div>
         </div>
       </div>
